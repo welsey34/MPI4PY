@@ -1,11 +1,16 @@
 #! /usr/bin/env python3
 
+'''
+Sending two 2 x 3 np.arrays with values ranging from 1 - 100 from one node to another 
+using MPI4PY's point to point.
+'''
+
 from mpi4py import MPI
 import numpy as np
 import sys
 
 comm = MPI.COMM_WORLD
-assert comm.size == 2
+assert comm.size == 2 #Assuring it only runs on 2 cores
 rank = comm.Get_rank()
 root = 0
 
